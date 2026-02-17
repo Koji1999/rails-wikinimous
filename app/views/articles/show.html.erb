@@ -1,0 +1,18 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <div>
+        <div class="border-bottom">
+          <h1 class="d-flex justify-content-between">
+            <%= @article.title %>
+            <div>
+              <%= link_to edit_article_path(@article) do %><i class="fa-regular fa-pen-to-square text-primary"></i><% end %>
+              <%= link_to article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %><i class="fa-regular fa-trash-can text-danger"></i><% end %>
+            </div>
+          </h1>
+        </div>
+        <p><%= @article.content %></p>
+      </div>
+    </div>
+  </div>
+</div>
